@@ -92,6 +92,12 @@ const exams = [
     image: "https://img.icons8.com/color/96/flow-chart.png", // ✔ replaced
   },
   {
+    title: "Inheritance Test 2",
+    description: "Advanced Inheritance topics",
+    link: "https://online-test.classplusapp.com/?testId=69dcd816b94ed1545866d1ec&defaultLanguage=en",
+    image: "https://img.icons8.com/color/96/flow-chart.png", // ✔ replaced
+  },
+  {
     title: "Polymorphism Test 1",
     description: "Learn method overriding and overloading.",
     link: "https://online-test.classplusapp.com/?testId=69dcd8484c553077464ae870&defaultLanguage=en",
