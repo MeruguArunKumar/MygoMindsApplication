@@ -32,7 +32,8 @@ import PythonExam from './components/pythonexam';
 import AwsExam from './components/AwsExam';
 import PowerBiExam from './components/PowerBiExam';
 import DotNetExam from './components/DotNetExam';
-
+import DotNetTopics from './components/DotNetTopics';
+import TopicExamPage from './components/TopicExamPage';
 // Sub Exams
 import DNExamone from './components/DNExamone';
 import Javaexamone from './components/Javaexamone';
@@ -85,7 +86,12 @@ export default function App() {
             <Route path="/python-exam" element={<PythonExam />} />
             <Route path="/aws-exam" element={<AwsExam />} />
             <Route path="/powerbi-exam" element={<PowerBiExam />} />
+            {/*
+            <Route path="/dotnet-exam" element={<DotNetExam />} /> 
+            */}
             <Route path="/dotnet-exam" element={<DotNetExam />} />
+          <Route path="/dotnet-topics" element={<DotNetTopics />} />
+<Route path="/topic/:topic" element={<TopicExamPage />} />
 
             {/* SUB EXAMS */}
             <Route path="/Dotneexam1" element={<DNExamone />} />

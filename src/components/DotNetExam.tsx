@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { Code, Server, Globe, Database, Cloud } from "lucide-react";
 
 export default function DotNetRoadmap() {
   const navigate = useNavigate();
@@ -10,112 +11,129 @@ export default function DotNetRoadmap() {
 
         {/* HEADER */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold 
-          bg-gradient-to-r from-purple-500 to-indigo-500 
-          bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent">
             .NET Full Stack Roadmap
           </h1>
           <p className="text-gray-600 mt-3">
-            Master .NET backend and full stack development step-by-step
+            Step-by-step learning path to become a .NET Full Stack Developer
           </p>
         </div>
 
         <div className="space-y-10">
 
-          {/* SECTION 1 */}
+          {/* 1️⃣ C# FUNDAMENTALS */}
           <Section
+            icon={<Code size={28} />}
             title="1. C# Fundamentals"
             items={[
-              "Data Types and Variables",
-              "Control Statements",
-              "Arrays and Strings",
-              "OOP Concepts",
-              "Polymorphism and Abstraction",
-              "Exception Handling",
+              "Variables & Data Types",
+              "Operators",
+              "Type Casting",
+              "Conditional Statements",
+              "Loops",
+              "Arrays & Strings",
+              "Methods & Functions",
+              "OOP (Class, Inheritance, Polymorphism)",
               "Collections",
+              "Generics",
+              "Delegates & Events",
+              "Exception Handling",
               "LINQ Basics"
             ]}
-            route="/Dotneexam1"
+            route="/dotnet-topics"
             navigate={navigate}
           />
 
-          {/* SECTION 2 */}
+          {/* 2️⃣ .NET CORE */}
           <Section
-            title="2. .NET Core Basics"
+            icon={<Server size={28} />}
+            title="2. .NET Core & Architecture"
             items={[
               ".NET Architecture",
-              "CLR and Runtime",
+              "CLR, CTS, CLS",
               "Project Structure",
+              "Middleware Pipeline",
               "Dependency Injection",
-              "Middleware"
+              "Configuration & Logging"
             ]}
             route="/dotnet-exam-2"
             navigate={navigate}
           />
 
-          {/* SECTION 3 */}
+          {/* 3️⃣ ASP.NET CORE MVC */}
           <Section
-            title="3. ASP.NET Core"
+            icon={<Globe size={28} />}
+            title="3. ASP.NET Core MVC"
             items={[
-              "MVC Architecture",
-              "Controllers",
-              "Views",
+              "MVC Pattern",
+              "Controllers & Actions",
+              "Views & Razor",
               "Model Binding",
-              "Validation"
+              "Validation",
+              "Tag Helpers",
+              "Routing"
             ]}
             route="/dotnet-exam-3"
             navigate={navigate}
           />
 
-          {/* SECTION 4 */}
+          {/* 4️⃣ WEB API */}
           <Section
-            title="4. Web APIs"
+            icon={<Globe size={28} />}
+            title="4. Web API Development"
             items={[
-              "REST APIs",
+              "REST API Concepts",
               "HTTP Methods",
-              "Swagger",
-              "Authentication",
-              "JWT"
+              "Routing & Controllers",
+              "Swagger Integration",
+              "Authentication (JWT)",
+              "Authorization"
             ]}
             route="/dotnet-exam-4"
             navigate={navigate}
           />
 
-          {/* SECTION 5 */}
+          {/* 5️⃣ DATABASE + EF CORE */}
           <Section
-            title="5. Entity Framework"
+            icon={<Database size={28} />}
+            title="5. Entity Framework Core"
             items={[
               "ORM Concepts",
-              "DbContext",
+              "DbContext & DbSet",
               "Migrations",
-              "CRUD",
-              "LINQ Queries"
+              "CRUD Operations",
+              "LINQ Queries",
+              "Stored Procedures"
             ]}
             route="/dotnet-exam-5"
             navigate={navigate}
           />
 
-          {/* SECTION 6 */}
+          {/* 6️⃣ FRONTEND */}
           <Section
-            title="6. Frontend Integration"
+            icon={<Globe size={28} />}
+            title="6. Frontend (React / Angular)"
             items={[
-              "HTML CSS JS",
-              "Bootstrap",
-              "React Integration",
-              "API Consumption"
+              "HTML, CSS, JavaScript",
+              "Bootstrap / Tailwind",
+              "React Basics",
+              "API Integration",
+              "Forms & Validation"
             ]}
             route="/dotnet-exam-6"
             navigate={navigate}
           />
 
-          {/* SECTION 7 */}
+          {/* 7️⃣ DEPLOYMENT */}
           <Section
+            icon={<Cloud size={28} />}
             title="7. Deployment & Tools"
             items={[
-              "Visual Studio",
-              "Git",
-              "Azure",
-              "CI/CD"
+              "Git & GitHub",
+              "Azure Deployment",
+              "CI/CD Pipelines",
+              "Docker Basics",
+              "App Hosting"
             ]}
             route="/dotnet-exam-7"
             navigate={navigate}
@@ -127,16 +145,25 @@ export default function DotNetRoadmap() {
   );
 }
 
-/* ✅ REUSABLE SECTION COMPONENT */
-function Section({ title, items, route, navigate }: any) {
+/* ✅ PROFESSIONAL SECTION CARD */
+function Section({ title, items, route, navigate, icon }: any) {
   return (
-    <div className="bg-white shadow-lg rounded-2xl p-8 border-l-4 border-purple-500">
+    <div className="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 hover:shadow-2xl transition">
 
-      <h2 className="text-2xl font-bold mb-4">{title}</h2>
+      {/* HEADER */}
+      <div className="flex items-center gap-3 mb-4">
+        <div className="p-3 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-xl">
+          {icon}
+        </div>
+        <h2 className="text-2xl font-bold">{title}</h2>
+      </div>
 
-      <ul className="grid md:grid-cols-2 gap-3 text-gray-700 text-sm">
+      {/* CONTENT */}
+      <ul className="grid md:grid-cols-2 gap-3 text-gray-600 text-sm">
         {items.map((item: string, index: number) => (
-          <li key={index}>{item}</li>
+          <li key={index} className="flex items-center gap-2">
+            <span className="text-purple-500">✔</span> {item}
+          </li>
         ))}
       </ul>
 
@@ -147,7 +174,7 @@ function Section({ title, items, route, navigate }: any) {
         bg-gradient-to-r from-purple-500 to-indigo-500 
         hover:scale-105 hover:shadow-lg transition-all duration-300"
       >
-        Start Test →
+        Start Learning →
       </button>
 
     </div>
