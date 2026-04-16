@@ -54,9 +54,11 @@ export default function DotNetRoadmap() {
               "Project Structure",
               "Middleware Pipeline",
               "Dependency Injection",
-              "Configuration & Logging"
+              "Configuration & Logging",
+              "Web Basics",
+              "Oops in Mvc"
             ]}
-            route="/dotnet-exam-2"
+            route="/dotnet-topic1"
             navigate={navigate}
           />
 
