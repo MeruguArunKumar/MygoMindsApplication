@@ -21,10 +21,10 @@ export default function DotNetRoadmap() {
 
         <div className="space-y-10">
 
-          {/* 1️⃣ C# FUNDAMENTALS */}
+          {/*  C# FUNDAMENTALS */}
           <Section
             icon={<Code size={28} />}
-            title="1. C# Fundamentals"
+            title=" C# Fundamentals"
             items={[
               "Variables & Data Types",
               "Operators",
@@ -44,10 +44,10 @@ export default function DotNetRoadmap() {
             navigate={navigate}
           />
 
-          {/* 2️⃣ .NET CORE */}
+          {/*  .NET CORE */}
           <Section
             icon={<Server size={28} />}
-            title="2. .NET Core & Architecture"
+            title=" .NET Core & Architecture"
             items={[
               ".NET Architecture",
               "CLR, CTS, CLS",
@@ -60,10 +60,10 @@ export default function DotNetRoadmap() {
             navigate={navigate}
           />
 
-          {/* 3️⃣ ASP.NET CORE MVC */}
+          {/*  ASP.NET CORE MVC */}
           <Section
             icon={<Globe size={28} />}
-            title="3. ASP.NET Core MVC"
+            title=" ASP.NET Core MVC"
             items={[
               "MVC Pattern",
               "Controllers & Actions",
@@ -77,10 +77,10 @@ export default function DotNetRoadmap() {
             navigate={navigate}
           />
 
-          {/* 4️⃣ WEB API */}
+          {/*  WEB API */}
           <Section
             icon={<Globe size={28} />}
-            title="4. Web API Development"
+            title=" Web API Development"
             items={[
               "REST API Concepts",
               "HTTP Methods",
@@ -93,10 +93,10 @@ export default function DotNetRoadmap() {
             navigate={navigate}
           />
 
-          {/* 5️⃣ DATABASE + EF CORE */}
+          {/*  DATABASE + EF CORE */}
           <Section
             icon={<Database size={28} />}
-            title="5. Entity Framework Core"
+            title=" Entity Framework Core"
             items={[
               "ORM Concepts",
               "DbContext & DbSet",
@@ -109,10 +109,10 @@ export default function DotNetRoadmap() {
             navigate={navigate}
           />
 
-          {/* 6️⃣ FRONTEND */}
+          {/*  FRONTEND */}
           <Section
             icon={<Globe size={28} />}
-            title="6. Frontend (React / Angular)"
+            title=" Frontend (React / Angular)"
             items={[
               "HTML, CSS, JavaScript",
               "Bootstrap / Tailwind",
@@ -124,10 +124,10 @@ export default function DotNetRoadmap() {
             navigate={navigate}
           />
 
-          {/* 7️⃣ DEPLOYMENT */}
+          {/*  DEPLOYMENT */}
           <Section
             icon={<Cloud size={28} />}
-            title="7. Deployment & Tools"
+            title=" Deployment & Tools"
             items={[
               "Git & GitHub",
               "Azure Deployment",
