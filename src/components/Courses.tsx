@@ -39,17 +39,6 @@ const courses: Course[] = [
   },
   {
     id: 3,
-    title: "AWS DevOps Engineering",
-    route: "/aws-devops",
-    category: "Cloud",
-    duration: "2 Months",
-    rating: 5.0,
-    reviews: 210,
-    image: "https://res.cloudinary.com/dslbwf2g9/image/upload/v1775205097/We_are_implementing_a_one-year_moratorium_on_police_use_of_Rekognition_iqctvn.jpg",
-    instructor: "Hari Sir"
-  },
-  {
-    id: 5,
     title: ".NET Fullstack Development",
     route: "/dotnet-fullstack",
     category: "Development",
@@ -59,6 +48,18 @@ const courses: Course[] = [
     image: "https://res.cloudinary.com/dslbwf2g9/image/upload/v1775205271/Converting_Numeric_Strings_to_Double_in_NET__Culture_and_Regional_Setting_Issues_wqmabs.jpg",
     instructor: "Expert Trainer"
   },
+  {
+    id: 4,
+    title: "AWS DevOps Engineering",
+    route: "/aws-devops",
+    category: "Cloud",
+    duration: "2 Months",
+    rating: 5.0,
+    reviews: 210,
+    image: "https://res.cloudinary.com/dslbwf2g9/image/upload/v1775205097/We_are_implementing_a_one-year_moratorium_on_police_use_of_Rekognition_iqctvn.jpg",
+    instructor: "Hari Sir"
+  },
+  
   {
     id: 6,
     title: "Data Analytics & Power BI",

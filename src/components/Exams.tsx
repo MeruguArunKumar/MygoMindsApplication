@@ -37,13 +37,8 @@ export default function ExamsPage() {
     desc: "Master CI/CD, Docker, Kubernetes, and AWS cloud deployment.",
     route: "/aws-exam",
     image: "https://res.cloudinary.com/dslbwf2g9/image/upload/v1776253970/Aws_1_iwkaud.png"
-  },
-  {
-    title: "Power BI",
-    desc: "Learn dashboards, data modeling, and business analytics.",
-    route: "/powerbi-exam",
-    image: "https://res.cloudinary.com/dslbwf2g9/image/upload/v1776253970/PowerBi_1_xm6fer.png"
   }
+  
 ];
 
   const frontendCourses = [
@@ -70,6 +65,18 @@ export default function ExamsPage() {
     desc: "Build responsive websites quickly using Bootstrap framework.",
     route: "/bootstrap-exam",
     image: "https://res.cloudinary.com/dslbwf2g9/image/upload/v1776250960/Bootstrap_lk4i1d.png"
+  },
+   {
+    title: "Angular",
+    desc: "Build dynamic single-page applications using Angular framework.",
+    route: "/angular-exam",
+    image: "https://res.cloudinary.com/dslbwf2g9/image/upload/v1776255000/angular_sample.png"
+  },
+  {
+    title: "React",
+    desc: "Create interactive UI components using React library.",
+    route: "/react-exam",
+    image: "https://res.cloudinary.com/dslbwf2g9/image/upload/v1776255000/react_sample.png"
   }
 ];
 
@@ -97,6 +104,14 @@ export default function ExamsPage() {
     desc: "Learn NoSQL database concepts, collections, and document-based storage.",
     route: "/mongodb-exam",
     image: "https://res.cloudinary.com/dslbwf2g9/image/upload/v1776256445/Mongodb_fnmy8e.png"
+  }
+];
+const dataCourses = [
+ {
+    title: "Power BI",
+    desc: "Learn dashboards, data modeling, and business analytics.",
+    route: "/powerbi-exam",
+    image: "https://res.cloudinary.com/dslbwf2g9/image/upload/v1776253970/PowerBi_1_xm6fer.png"
   }
 ];
   return (
@@ -127,17 +142,10 @@ export default function ExamsPage() {
   ))}
 </div>
 
-{/* ================= CLOUD ================= */}
-<SectionTitle title="Cloud Technologies" />
 
-<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-  {cloudCourses.map((course, index) => (
-    <Card key={index} course={course} navigate={navigate} />
-  ))}
-</div>
 
 {/* ================= FRONTEND ================= */}
-<SectionTitle title="Front-end Technologies" />
+<SectionTitle title="Front-End " />
 
 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
   {frontendCourses.map((course, index) => (
@@ -146,15 +154,31 @@ export default function ExamsPage() {
 </div>
 
 {/* ================= DATABASE ================= */}
-<SectionTitle title="Database Technologies" />
+<SectionTitle title="Database" />
 
 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
   {databaseCourses.map((course, index) => (
     <Card key={index} course={course} navigate={navigate} />
+  ))}  
+</div>
+    {/* ================= CLOUD ================= */}
+<SectionTitle title="Cloud " />
+
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {cloudCourses.map((course, index) => (
+    <Card key={index} course={course} navigate={navigate} />
+  ))}
+</div>  
+{/* ================= DATA ANALYTICS ================= */}
+<SectionTitle title="Data Analytics & Business Intelligence" />
+
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {dataCourses.map((course, index) => (
+    <Card key={index} course={course} navigate={navigate} />
   ))}
 </div>
-       
       </div>
+
     </div>
   );
 }
