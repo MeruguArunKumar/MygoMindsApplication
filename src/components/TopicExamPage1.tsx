@@ -2,144 +2,268 @@ import { useParams } from "react-router-dom";
 
 const examsByTopic: any = {
 
-  /* ================= .NET ARCHITECTURE ================= */
-  "dotnet-architecture": [
+  "web fundamentals": [
     {
-      title: ".NET Architecture Test 1",
-      desc: "Basics of .NET architecture",
-      link: "#",
-      image: "https://img.icons8.com/color/96/system-information.png",
+      title: "Web Fundamentals Test 1",
+      desc: "Introduction to Web, Client–Server Architecture",
+      link: "https://online-test.classplusapp.com/?testId=69e75f872faaee51bfe49715&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/internet.png",
     },
     {
-      title: ".NET Architecture Test 2",
-      desc: "CLR, IL, JIT concepts",
-      link: "#",
-      image: "https://img.icons8.com/color/96/system-information.png",
-    },
-  ],
-
-  /* ================= CLR CTS CLS ================= */
-  "clr-cts-cls": [
-    {
-      title: "CLR Test",
-      desc: "Runtime & execution concepts",
-      link: "#",
-      image: "https://img.icons8.com/color/96/settings.png",
-    },
-    {
-      title: "CTS & CLS Test",
-      desc: "Type system & language rules",
-      link: "#",
-      image: "https://img.icons8.com/color/96/settings.png",
+      title: "Web Fundamentals Test 2",
+      desc: "HTTP/HTTPS, Request–Response Lifecycle",
+      link: "https://online-test.classplusapp.com/?testId=69e7600cafaa137c8da88e30&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/internet.png",
     },
   ],
 
-  /* ================= PROJECT STRUCTURE ================= */
-  "project-structure": [
+  "mvc architecture": [
     {
-      title: "Project Structure Test",
-      desc: "Solution, project & folders",
-      link: "#",
+      title: "MVC Architecture Test 1",
+      desc: "What is MVC, MVC Request Flow",
+      link: "https://online-test.classplusapp.com/?testId=69e7609c700c4108cc48f192&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/flow-chart.png",
+    },
+    {
+      title: "MVC Architecture Test 2",
+      desc: "Roles of Model, View, Controller, Advantages",
+      link: "https://online-test.classplusapp.com/?testId=69e7610c7b7e6a58153cc30d&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/flow-chart.png",
+    },
+  ],
+
+  "oop concepts (foundation)": [
+    {
+      title: "OOP Test 1",
+      desc: "Encapsulation, Inheritance",
+      link: "https://online-test.classplusapp.com/?testId=69e7618b1f79962f35336ce7&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/class.png",
+    },
+    {
+      title: "OOP Test 2",
+      desc: "Polymorphism, Abstraction",
+      link: "https://online-test.classplusapp.com/?testId=69e761afd53ea61201944be0&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/class.png",
+    },
+    {
+      title: "OOP Test 3",
+      desc: "IS-A / HAS-A, Method Return Types",
+      link: "https://online-test.classplusapp.com/?testId=69e761cb9366ee60ddf80626&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/class.png",
+    },
+  ],
+
+  "design patterns": [
+    {
+      title: "Design Patterns Test 1",
+      desc: "Singleton, Factory Pattern",
+      link: "https://online-test.classplusapp.com/?testId=69e761f13627507e348e7868&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/connection-status-on.png",
+    },
+    {
+      title: "Design Patterns Test 2",
+      desc: "Dependency Injection Basics",
+      link: "https://online-test.classplusapp.com/?testId=69e762100ec539410c2e7d40&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/connection-status-on.png",
+    },
+  ],
+
+  "project & folder structure": [
+    {
+      title: "Project Structure Test 1",
+      desc: "MVC Project Structure, Folders",
+      link: "https://online-test.classplusapp.com/?testId=69e76233ecb23a2061ac7af6&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/folder-invoices.png",
+    },
+    {
+      title: "Project Structure Test 2",
+      desc: "App_Start, Web.config Basics",
+      link: "https://online-test.classplusapp.com/?testId=69e7625dde9f7e31bc8a10e4&defaultLanguage=en",
       image: "https://img.icons8.com/color/96/folder-invoices.png",
     },
   ],
 
-  /* ================= MIDDLEWARE ================= */
-  "middleware": [
+  "controllers & routing": [
     {
-      title: "Middleware Basics",
-      desc: "Pipeline & request flow",
-      link: "#",
-      image: "https://img.icons8.com/color/96/flow-chart.png",
+      title: "Controllers Test 1",
+      desc: "Controllers & Action Methods",
+      link: "https://online-test.classplusapp.com/?testId=69e7628b450b8cad294aad69&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/api-settings.png",
     },
     {
-      title: "Middleware Advanced",
-      desc: "Use, Run, Map methods",
-      link: "#",
-      image: "https://img.icons8.com/color/96/flow-chart.png",
+      title: "Controllers Test 2",
+      desc: "Action Results & Routing",
+      link: "https://online-test.classplusapp.com/?testId=69e762a62faaeebcdbe49bb1&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/api-settings.png",
     },
   ],
 
-  /* ================= DEPENDENCY INJECTION ================= */
-  "dependency-injection": [
+  "views & razor": [
     {
-      title: "DI Basics",
-      desc: "Introduction & concepts",
-      link: "#",
+      title: "Views Test 1",
+      desc: "Razor Syntax, Layout Pages",
+      link: "https://online-test.classplusapp.com/?testId=69e762cede9f7ed8b68a10ee&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/code.png",
+    },
+    {
+      title: "Views Test 2",
+      desc: "Strongly Typed Views, Partial Views",
+      link: "https://online-test.classplusapp.com/?testId=69e762e950f524e61700f072&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/code.png",
+    },
+  ],
+
+  "html helpers & extension methods": [
+    {
+      title: "HTML Helpers Test 1",
+      desc: "HTML Helpers, Strongly Typed Helpers",
+      link: "https://online-test.classplusapp.com/?testId=69e7631b08fb353648d1a90b&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/source-code.png",
+    },
+    {
+      title: "HTML Helpers Test 2",
+      desc: "Custom Helpers, Extension Methods",
+      link: "https://online-test.classplusapp.com/?testId=69e7633c700c41aa9d48f237&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/source-code.png",
+    },
+  ],
+
+  "state management": [
+    {
+      title: "State Management Test 1",
+      desc: "ViewData, ViewBag, TempData",
+      link: "https://online-test.classplusapp.com/?testId=69e7636fe9d86007e5cf47ec&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/database.png",
+    },
+    {
+      title: "State Management Test 2",
+      desc: "Session, Cookies",
+      link: "https://online-test.classplusapp.com/?testId=69e76396743d9987b781a5c4&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/database.png",
+    },
+     {
+      title: "State Management Test 3",
+      desc: "Diff B/W VB,VD,TDSession, Cookies",
+      link: "https://online-test.classplusapp.com/?testId=69e763cb41d33da53406d5e4&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/database.png",
+    },
+  ],
+
+  "model binding & validation": [
+    {
+      title: "Model Binding Test 1",
+      desc: "Model Binding, Data Annotations",
+      link: "https://online-test.classplusapp.com/?testId=69e7640ede9f7e0dd58a119c&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/checked--v1.png",
+    },
+    {
+      title: "Model Binding Test 2",
+      desc: "Client-Side & Server-Side Validation",
+      link: "https://online-test.classplusapp.com/?testId=69e7642c2469398e4eac2ea7&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/checked--v1.png",
+    },
+    {
+      title: "Model Binding Test 3",
+      desc: "Scaffolding",
+      link: "https://online-test.classplusapp.com/?testId=69e76447861b200b34e40a07&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/checked--v1.png",
+    },
+  ],
+
+  "entity framework (ef)": [
+    {
+      title: "EF Test 1",
+      desc: "Introduction, DbContext & DbSet",
+      link: "https://online-test.classplusapp.com/?testId=69e7647cde9f7e28408a11ad&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/database.png",
+    },
+    {
+      title: "EF Test 2",
+      desc: "Code First, Migrations, CRUD",
+      link: "https://online-test.classplusapp.com/?testId=69e764cb9fb2385269285fb8&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/database.png",
+    },
+  ],
+
+  "linq": [
+    {
+      title: "LINQ Test 1",
+      desc: "Where, Select",
+      link: "https://online-test.classplusapp.com/?testId=69e764f1d53ea61ecc944d58&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/filter.png",
+    },
+    {
+      title: "LINQ Test 2",
+      desc: "FirstOrDefault, SingleOrDefault",
+      link: "https://online-test.classplusapp.com/?testId=69e765159fb238128d285fc8&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/filter.png",
+    },
+    {
+      title: "LINQ Test 3",
+      desc: "OrderBy, GroupBy, Deferred Execution",
+      link: "https://online-test.classplusapp.com/?testId=69e7653724693929fcac2ed1&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/filter.png",
+    },
+  ],
+
+  "filters": [
+    {
+      title: "Filters Test 1",
+      desc: "Authorization, Action Filter",
+      link: "https://online-test.classplusapp.com/?testId=69e765642faaeec18ce49c9b&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/security-checked.png",
+    },
+    {
+      title: "Filters Test 2",
+      desc: "Result Filter, Exception Filter",
+      link: "https://online-test.classplusapp.com/?testId=69e765882faaee7ceae49ca0&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/security-checked.png",
+    },
+  ],
+
+  "security, ajax & client interaction": [
+    {
+      title: "Security Test 1",
+      desc: "Authentication, Authorization, Security Practices",
+      link: "https://online-test.classplusapp.com/?testId=69e765aaf8f3bb9a6a41ddd8&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/lock--v1.png",
+    },
+    {
+      title: "Security Test 2",
+      desc: "AJAX, jQuery AJAX, Partial Page Updates",
+      link: "https://online-test.classplusapp.com/?testId=69e765c87b7e6a68c43cc81a&defaultLanguage=en",
+      image: "https://img.icons8.com/color/96/lock--v1.png",
+    },
+  ],
+
+  "dependency injection (advanced)": [
+    {
+      title: "DI Test 1",
+      desc: "Constructor Injection, Interface Design",
+      link: "https://online-test.classplusapp.com/?testId=69e766019992000575a0e8df&defaultLanguage=en",
       image: "https://img.icons8.com/color/96/connection-status-on.png",
     },
     {
-      title: "DI Lifetimes",
-      desc: "Scoped, Singleton, Transient",
-      link: "#",
+      title: "DI Test 2",
+      desc: "Loose Coupling",
+      link: "https://online-test.classplusapp.com/?testId=69e7663cae3cea9fbc990fdf&defaultLanguage=en",
       image: "https://img.icons8.com/color/96/connection-status-on.png",
-    },
-  ],
-
-  /* ================= CONFIGURATION ================= */
-  "configuration-logging": [
-    {
-      title: "Configuration Test",
-      desc: "appsettings.json usage",
-      link: "#",
-      image: "https://img.icons8.com/color/96/system-task.png",
-    },
-    {
-      title: "Logging Test",
-      desc: "ILogger & log levels",
-      link: "#",
-      image: "https://img.icons8.com/color/96/system-task.png",
-    },
-  ],
-
-  /* ================= WEB BASICS ================= */
-  "web-basics": [
-    {
-      title: "Web Basics Test 1",
-      desc: "Browser, Server, Request",
-      link: "#",
-      image: "https://img.icons8.com/color/96/internet.png",
-    },
-    {
-      title: "Web Basics Test 2",
-      desc: "HTTP, GET, POST",
-      link: "#",
-      image: "https://img.icons8.com/color/96/internet.png",
-    },
-  ],
-
-  /* ================= OOPS IN MVC ================= */
-  "oops-mvc": [
-    {
-      title: "MVC Basics",
-      desc: "Model, View, Controller",
-      link: "#",
-      image: "https://img.icons8.com/color/96/class.png",
-    },
-    {
-      title: "OOP in MVC",
-      desc: "Properties, classes, flow",
-      link: "#",
-      image: "https://img.icons8.com/color/96/class.png",
     },
   ],
 };
 
+
 export default function TopicExamPage() {
   const { topic } = useParams();
 
-  // ✅ Handle undefined safely
   if (!topic) {
     return <p className="text-center mt-10">Loading...</p>;
   }
 
-  // ✅ Clean topic (fix mismatch issues)
+  //  Normalize topic
   const cleanTopic = topic.toLowerCase().trim();
 
-  // ✅ Get exams
   const exams = examsByTopic[cleanTopic] || [];
-
-  // ✅ Better title
   const formattedTitle = cleanTopic.replaceAll("-", " ");
 
   return (
@@ -170,29 +294,24 @@ export default function TopicExamPage() {
               transition-all duration-300 relative"
             >
 
-              {/* BADGE */}
               <span className="absolute top-3 right-3 text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full">
                 Test
               </span>
 
-              {/* IMAGE */}
               <img
                 src={exam.image}
                 alt={exam.title}
                 className="w-16 h-16 mx-auto mb-4"
               />
 
-              {/* TITLE */}
               <h2 className="text-lg font-semibold text-center">
                 {exam.title}
               </h2>
 
-              {/* DESC */}
               <p className="text-gray-500 text-sm text-center mt-2">
                 {exam.desc}
               </p>
 
-              {/* BUTTON */}
               <a
                 href={exam.link}
                 target="_blank"

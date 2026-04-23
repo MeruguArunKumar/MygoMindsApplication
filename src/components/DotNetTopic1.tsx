@@ -2,56 +2,98 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const topicOrder = [
-  "dotnet-architecture",
-  "clr-cts-cls",
-  "project-structure",
-  "middleware",
-  "dependency-injection",
-  "configuration-logging",
-  "web-basics",
-  "oops-mvc",
+  "Web Fundamentals",
+  "MVC Architecture",
+  "OOP Concepts (Foundation)",
+  "Design Patterns",
+  "Project & Folder Structure",
+  "Controllers & Routing",
+  "Views & Razor",
+  "HTML Helpers & Extension Methods",
+  "State Management",
+  "Model Binding & Validation",
+  "Entity Framework (EF)",
+  "LINQ",
+  "Filters",
+  "Security, AJAX & Client Interaction",
+  "Dependency Injection (Advanced)"
 ];
 
 const topicsData: any = {
-  "dotnet-architecture": {
-    name: ".NET Architecture",
-     image: "https://img.icons8.com/color/96/system-information.png",
+  "Web Fundamentals": {
+    name: "Web Fundamentals",
+    image: "https://img.icons8.com/color/96/internet.png",
+    color: "from-emerald-500 to-green-600",
+  },
+  "MVC Architecture": {
+    name: "MVC Architecture",
+    image: "https://img.icons8.com/color/96/flow-chart.png",
     color: "from-blue-500 to-indigo-500",
   },
-  "clr-cts-cls": {
-    name: "CLR, CTS, CLS",
-    image: "https://img.icons8.com/color/96/system-information.png",
-    color: "from-green-500 to-teal-500",
+  "OOP Concepts (Foundation)": {
+    name: "OOP Concepts",
+    image: "https://img.icons8.com/color/96/class.png",
+    color: "from-red-500 to-pink-500",
   },
-  "project-structure": {
+  "Design Patterns": {
+    name: "Design Patterns",
+    image: "https://img.icons8.com/color/96/connection-status-on.png",
+    color: "from-purple-500 to-indigo-500",
+  },
+  "Project & Folder Structure": {
     name: "Project Structure",
     image: "https://img.icons8.com/color/96/folder-invoices.png",
     color: "from-yellow-500 to-orange-500",
   },
-  middleware: {
-    name: "Middleware Pipeline",
-    image: "https://img.icons8.com/color/96/flow-chart.png",
-    color: "from-purple-500 to-indigo-500",
+  "Controllers & Routing": {
+    name: "Controllers & Routing",
+    image: "https://img.icons8.com/color/96/api-settings.png",
+    color: "from-cyan-500 to-blue-500",
   },
-  "dependency-injection": {
+  "Views & Razor": {
+    name: "Views & Razor",
+    image: "https://img.icons8.com/color/96/code.png",
+    color: "from-indigo-500 to-purple-500",
+  },
+  "HTML Helpers & Extension Methods": {
+    name: "HTML Helpers",
+    image: "https://img.icons8.com/color/96/source-code.png",
+    color: "from-pink-500 to-red-500",
+  },
+  "State Management": {
+    name: "State Management",
+    image: "https://img.icons8.com/color/96/database.png",
+    color: "from-green-500 to-teal-500",
+  },
+  "Model Binding & Validation": {
+    name: "Model Binding",
+    image: "https://img.icons8.com/color/96/checked--v1.png",
+    color: "from-blue-500 to-cyan-500",
+  },
+  "Entity Framework (EF)": {
+    name: "Entity Framework",
+    image: "https://img.icons8.com/color/96/database.png",
+    color: "from-indigo-500 to-blue-500",
+  },
+  "LINQ": {
+    name: "LINQ",
+    image: "https://img.icons8.com/color/96/filter.png",
+    color: "from-orange-500 to-red-500",
+  },
+  "Filters": {
+    name: "Filters",
+    image: "https://img.icons8.com/color/96/security-checked.png",
+    color: "from-teal-500 to-green-500",
+  },
+  "Security, AJAX & Client Interaction": {
+    name: "Security & AJAX",
+    image: "https://img.icons8.com/color/96/lock--v1.png",
+    color: "from-gray-600 to-gray-800",
+  },
+  "Dependency Injection (Advanced)": {
     name: "Dependency Injection",
     image: "https://img.icons8.com/color/96/connection-status-on.png",
     color: "from-pink-500 to-red-500",
-  },
-  "configuration-logging": {
-    name: "Configuration & Logging",
-    image: "https://img.icons8.com/color/96/system-task.png",
-    color: "from-cyan-500 to-blue-500",
-  },
-  "web-basics": {
-    name: "Web Basics",
-    image: "https://img.icons8.com/color/96/internet.png",
-    color: "from-emerald-500 to-green-600",
-  },
-  "oops-mvc": {
-    name: "OOPs in MVC",
-    image: "https://img.icons8.com/color/96/class.png",
-    color: "from-red-500 to-pink-500",
   },
 };
 
@@ -86,10 +128,10 @@ export default function DotNetTopics() {
       {/* HEADER */}
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">
-          .NET Learning Dashboard
+          ASP.NET MVC Learning Dashboard
         </h1>
         <p className="text-gray-500 mt-2">
-          Master .NET & ASP.NET Core step-by-step
+          Step-by-step ASP.NET MVC learning path
         </p>
       </div>
 

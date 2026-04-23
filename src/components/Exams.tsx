@@ -70,13 +70,13 @@ export default function ExamsPage() {
     title: "Angular",
     desc: "Build dynamic single-page applications using Angular framework.",
     route: "/angular-exam",
-    image: "https://res.cloudinary.com/dslbwf2g9/image/upload/v1776255000/angular_sample.png"
+    image: "https://res.cloudinary.com/dslbwf2g9/image/upload/v1776332562/Angular_e2zu6f.png"
   },
   {
     title: "React",
     desc: "Create interactive UI components using React library.",
     route: "/react-exam",
-    image: "https://res.cloudinary.com/dslbwf2g9/image/upload/v1776255000/react_sample.png"
+    image: "https://res.cloudinary.com/dslbwf2g9/image/upload/v1776332566/React_w5l8ju.png"
   }
 ];
 
@@ -183,7 +183,7 @@ const dataCourses = [
   );
 }
 
-/* ✅ SECTION TITLE */
+/*  SECTION TITLE */
 function SectionTitle({ title }: any) {
   return (
     <h2 className="text-2xl font-bold text-[#0B3C5D] border-l-4 border-orange-500 pl-4">
@@ -192,7 +192,7 @@ function SectionTitle({ title }: any) {
   );
 }
 
-/* ✅ FULL CARD */
+/*  FULL CARD */
 function Card({ course, navigate }: any) {
   return (
     <div
@@ -229,7 +229,7 @@ function Card({ course, navigate }: any) {
   );
 }
 
-/* ✅ SIMPLE GRID (Frontend + DB) */
+/*  SIMPLE GRID (Frontend + DB) */
 function SimpleGrid({ courses }: any) {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
