@@ -33,7 +33,14 @@ import AwsExam from './components/AwsExam';
 import PowerBiExam from './components/PowerBiExam';
 import DotNetExam from './components/DotNetExam';
 import DotNetTopics from './components/DotNetTopics';
+import DotNetTopic1 from './components/DotNetTopic1'
 import TopicExamPage from './components/TopicExamPage';
+import TopicExamPage1 from './components/TopicExamPage1';
+import DotNetTopic2 from './components/DotNetTopic2';
+import TopicExamPage2 from './components/TopicExamPage2';
+import DotNetTopic3 from './components/DotNetTopic3';
+import TopicExamPage3 from './components/TopicExamPage3';
+
 // Sub Exams
 import DNExamone from './components/DNExamone';
 import Javaexamone from './components/Javaexamone';
@@ -63,7 +70,7 @@ export default function App() {
         {/* NAVBAR */}
         <Navbar />
 
-        {/* ✅ ONLY CHANGE HERE */}
+        
         <main className="flex-grow pt-20">
           <Routes>
 
@@ -89,10 +96,21 @@ export default function App() {
             {/*
             <Route path="/dotnet-exam" element={<DotNetExam />} /> 
             */}
+            {/* CSharp / Advanced exams */}
             <Route path="/dotnet-exam" element={<DotNetExam />} />
           <Route path="/dotnet-topics" element={<DotNetTopics />} />
 <Route path="/topic/:topic" element={<TopicExamPage />} />
 
+{/* MVC / Advanced exams */}
+<Route path="/dotnet-topic1" element={<DotNetTopic1 />} />
+<Route path="/mvc-topic/:topic" element={<TopicExamPage1 />} />
+{/* MVC Core / Advanced exams */}
+<Route path="/dotnet-topic2" element={<DotNetTopic2 />} />
+<Route path="/coremvc-topic/:topic" element={<TopicExamPage2 />} />
+{/* WebApi / Advanced exams */}
+
+<Route path="/dotnet-topic3" element={<DotNetTopic3 />} />
+<Route path="/webapi-topic/:topic" element={<TopicExamPage3 />} />
             {/* SUB EXAMS */}
             <Route path="/Dotneexam1" element={<DNExamone />} />
             <Route path="/java-exam-1" element={<Javaexamone />} />
