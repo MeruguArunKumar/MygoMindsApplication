@@ -7,7 +7,7 @@ const topicsData: any = {
     name: "Web API",
     image: "https://img.icons8.com/color/96/api-settings.png",
     color: "from-blue-500 to-cyan-500",
-    desc: "6 Structured Tests (Beginner → Advanced)"
+    desc: " Structured Tests (Beginner → Advanced)"
   },
   "Microservices": {
     name: "Microservices",
