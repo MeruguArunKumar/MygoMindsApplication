@@ -1,17 +1,40 @@
-import { motion } from 'motion/react';
-import { Award, Users } from 'lucide-react';
+"use client";
+
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { Award, Users } from "lucide-react";
 
 export default function Hero() {
+  const ref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"]
+  });
+
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const videoY = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const cardY1 = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const cardY2 = useTransform(scrollYProgress, [0, 1], [0, 80]);
+
   return (
-    <section className="relative min-h-[80vh] flex items-center pt-20 pb-32 overflow-hidden">
+    <section
+      ref={ref}
+      className="relative min-h-[80vh] flex items-center pt-20 pb-10 overflow-hidden"
+    >
       
       {/* BACKGROUND SHAPE */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-accent/5 -skew-x-12 translate-x-1/4 z-0" />
-      
-      <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+      <motion.div
+        style={{ y: bgY }}
+        className="absolute top-0 right-0 w-1/2 h-full bg-brand-accent/5 -skew-x-12 translate-x-1/4 z-0"
+      />
+
+      <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-8 items-center relative z-10">
         
         {/* LEFT CONTENT */}
         <motion.div
+          style={{ y: textY }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -27,10 +50,10 @@ export default function Hero() {
             Empowering aspiring professionals with expert-led training and guaranteed placement assistance in the most in-demand tech domains.
           </p>
 
-          {/* ✅ UPDATED BUTTON */}
+          {/* 🔥 UPDATED BUTTON */}
           <div className="flex flex-wrap gap-4">
             <a
-              href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID"
+              href="https://www.youtube.com/watch?v=l8_GwdXmo2A&list=PLUomMi6vveyRBkd0QSM4dIzYaJTYfZ4Pl"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-block"
@@ -40,7 +63,7 @@ export default function Hero() {
           </div>
 
           {/* STUDENTS */}
-          <div className="mt-12 flex items-center gap-4">
+          <div className="mt-10 flex items-center gap-4">
             <div className="flex -space-x-3">
               {[1, 2, 3, 4].map(i => (
                 <img
@@ -57,30 +80,34 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* RIGHT VIDEO SECTION */}
+        {/* RIGHT SHORT VIDEO SECTION */}
         <motion.div
+          style={{ y: videoY }}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="relative"
+          className="relative flex justify-center"
         >
 
-          {/* VIDEO CONTAINER */}
-          <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl w-full aspect-video">
-
-            <iframe
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/NGXNgIqA-Vs?start=134&controls=1"
-              title="Learning Video"
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            ></iframe>
-
+          {/* SHORTS VIDEO */}
+          <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl bg-black p-2">
+            <div className="w-[280px] md:w-[320px] aspect-[9/16] rounded-2xl overflow-hidden">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/l8_GwdXmo2A"
+                title="YouTube Short"
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
 
           {/* CERTIFIED CARD */}
-          <div className="absolute -bottom-10 -left-10 glass-card p-6 rounded-2xl z-20 hidden md:block">
+          <motion.div
+            style={{ y: cardY1 }}
+            className="absolute -bottom-8 -left-8 glass-card p-6 rounded-2xl z-20 hidden md:block"
+          >
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
                 <Award size={24} />
@@ -90,10 +117,13 @@ export default function Hero() {
                 <p className="font-bold">Industry Recognized</p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* PLACEMENT CARD */}
-          <div className="absolute -top-10 -right-10 glass-card p-6 rounded-2xl z-20 hidden md:block">
+          <motion.div
+            style={{ y: cardY2 }}
+            className="absolute -top-8 -right-8 glass-card p-6 rounded-2xl z-20 hidden md:block"
+          >
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-600">
                 <Users size={24} />
@@ -103,10 +133,9 @@ export default function Hero() {
                 <p className="font-bold">100% Assistance</p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </motion.div>
-
       </div>
     </section>
   );

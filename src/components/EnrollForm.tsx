@@ -41,7 +41,7 @@ export default function EnrollForm() {
     });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     if (!formData.course) {
@@ -54,8 +54,51 @@ export default function EnrollForm() {
       return;
     }
 
-    console.log(formData);
-    alert("Enrollment submitted successfully!");
+    // ✅ FINAL GOOGLE FORM SUBMIT URL
+    const formURL =
+      "https://docs.google.com/forms/d/e/1FAIpQLScqaBE57efUFPf7w6tUjq6Y9BFX0EcPDhx5p1SA4eJIzn5rtg/formResponse";
+
+    const data = new URLSearchParams();
+
+    // ✅ EXACT FIELD MAPPING
+    data.append("entry.256517667", formData.name);           // Name
+    data.append("entry.143684493", formData.email);          // Email
+    data.append("entry.269434935", formData.gender);         // Gender
+    data.append("entry.1924209184", formData.year);          // Year
+    data.append("entry.1836875072", formData.mode);          // Mode
+    data.append("entry.1535442819", formData.address);       // Address
+    data.append("entry.197989619", formData.phone);          // Phone
+    data.append("entry.1939594807", formData.qualification); // Qualification
+    data.append("entry.205996529", formData.course);         // Course
+
+    try {
+      await fetch(formURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: data.toString(),
+      });
+
+      alert("Enrollment submitted successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        gender: "",
+        year: "",
+        mode: "",
+        address: "",
+        qualification: "",
+        course: "",
+        experience: "",
+      });
+
+    } catch (error) {
+      alert("Submission failed");
+    }
   };
 
   return (
@@ -63,7 +106,6 @@ export default function EnrollForm() {
 
       <div className="w-full max-w-6xl bg-white/60 backdrop-blur-2xl shadow-[0_25px_80px_rgba(255,100,100,0.25)] rounded-3xl p-10 border border-white/40">
 
-        {/* HEADER */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
             Enroll Now 
@@ -75,7 +117,6 @@ export default function EnrollForm() {
 
         <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-10">
 
-          {/* LEFT */}
           <div className="space-y-6">
 
             <Input label="Full Name" name="name" value={formData.name} onChange={handleChange} />
@@ -99,10 +140,8 @@ export default function EnrollForm() {
 
           </div>
 
-          {/* RIGHT */}
           <div className="space-y-6">
 
-            {/* PHONE */}
             <div>
               <label className="label">Mobile Number</label>
               <div className="flex items-center border rounded-xl overflow-hidden bg-white shadow-sm focus-within:ring-2 focus-within:ring-pink-400">
@@ -123,7 +162,6 @@ export default function EnrollForm() {
 
             <Input label="Qualification" name="qualification" value={formData.qualification} onChange={handleChange} />
 
-            {/* COURSE */}
             {isPrefilled ? (
               <Input
                 label="Selected Course"
@@ -135,9 +173,9 @@ export default function EnrollForm() {
             ) : (
               <Select label="Choose Course" name="course" value={formData.course} onChange={handleChange}>
                 <option value="">Select Course</option>
-                <option>Java Fullstack</option>
-                <option>Python Fullstack</option>
-                <option>.NET Fullstack</option>
+                <option>Java Full Stack</option>
+                <option>Python Full Stack</option>
+                <option>.NET Full Stack</option>
                 <option>Power BI</option>
                 <option>Azure DevOps</option>
                 <option>React JS</option>
@@ -148,7 +186,6 @@ export default function EnrollForm() {
 
           </div>
 
-          {/* BUTTON */}
           <div className="col-span-2 mt-6">
             <button className="w-full py-4 rounded-full font-bold text-white text-lg bg-gradient-to-r from-red-500 via-pink-500 to-orange-500 shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300">
               Submit Application 
@@ -158,7 +195,6 @@ export default function EnrollForm() {
         </form>
       </div>
 
-      {/* STYLES */}
       <style>
         {`
           .label {
@@ -189,7 +225,6 @@ export default function EnrollForm() {
   );
 }
 
-/* INPUT */
 function Input({ label, ...props }: any) {
   return (
     <div>
@@ -199,7 +234,6 @@ function Input({ label, ...props }: any) {
   );
 }
 
-/* SELECT */
 function Select({ label, children, ...props }: any) {
   return (
     <div>
@@ -209,7 +243,6 @@ function Select({ label, children, ...props }: any) {
   );
 }
 
-/* TEXTAREA */
 function Textarea({ label, ...props }: any) {
   return (
     <div>

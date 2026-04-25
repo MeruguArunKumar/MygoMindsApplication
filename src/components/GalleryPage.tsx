@@ -24,7 +24,8 @@ export default function GalleryPage() {
     "https://res.cloudinary.com/dslbwf2g9/image/upload/v1775219246/IMG_2199_tp1nx5.jpg",
     "https://res.cloudinary.com/dslbwf2g9/image/upload/v1775220729/IMG_7936_zl8seu.jpg",
     "https://res.cloudinary.com/dslbwf2g9/image/upload/v1775220714/IMG_7661_qypyfz.jpg",
-    "https://res.cloudinary.com/dslbwf2g9/image/upload/v1775220667/IMG_1637_qvj93b.jpg"
+    "https://res.cloudinary.com/dslbwf2g9/image/upload/v1775220667/IMG_1637_qvj93b.jpg",
+    "https://res.cloudinary.com/dslbwf2g9/image/upload/v1776493784/IMG_1736_vooiit.webp"
   ];
 
   const getGridClass = (index: number): string => {

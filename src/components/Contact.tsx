@@ -4,7 +4,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    countryCode: "+91", // ✅ NEW
+    countryCode: "+91",
     phone: "",
     message: "",
   });
@@ -12,7 +12,6 @@ export default function Contact() {
   const handleChange = (e: any) => {
     let { name, value } = e.target;
 
-    // Only digits for phone
     if (name === "phone") {
       value = value.replace(/\D/g, "");
     }
@@ -23,10 +22,9 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    // ✅ Validate phone (10 digits)
     if (!/^\d{10}$/.test(formData.phone)) {
       alert("Mobile number must be exactly 10 digits");
       return;
@@ -34,17 +32,41 @@ export default function Contact() {
 
     const fullPhone = `${formData.countryCode}${formData.phone}`;
 
-    console.log({ ...formData, fullPhone });
+    // ✅ GOOGLE FORM SUBMIT URL
+    const formURL =
+      "https://docs.google.com/forms/d/e/1FAIpQLSd-OV88qaAUC-356kik_OEq0zo5kat0uGyE1O_4YFSr6L9PcA/formResponse";
 
-    alert("Form submitted successfully!");
+    const data = new URLSearchParams();
 
-    setFormData({
-      name: "",
-      email: "",
-      countryCode: "+91",
-      phone: "",
-      message: "",
-    });
+    // ✅ EXACT FIELD MAPPING
+    data.append("entry.1000366847", formData.name);      // Name
+    data.append("entry.413168063", formData.email);      // Email
+    data.append("entry.1597206432", fullPhone);          // Phone (with country code)
+    data.append("entry.241756417", formData.message);    // Message
+
+    try {
+      await fetch(formURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: data.toString(),
+      });
+
+      alert("Message sent successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        countryCode: "+91",
+        phone: "",
+        message: "",
+      });
+
+    } catch (error) {
+      alert("Submission failed");
+    }
   };
 
   return (
@@ -112,13 +134,12 @@ export default function Contact() {
             />
           </div>
 
-          {/* PHONE WITH COUNTRY CODE */}
+          {/* PHONE */}
           <div>
             <label className="block mb-1 font-medium">Phone</label>
 
             <div className="flex gap-2">
               
-              {/* COUNTRY CODE */}
               <select
                 name="countryCode"
                 value={formData.countryCode}
@@ -132,7 +153,6 @@ export default function Contact() {
                 <option value="+971">🇦🇪 +971</option>
               </select>
 
-              {/* PHONE INPUT */}
               <input
                 type="text"
                 name="phone"
@@ -143,7 +163,6 @@ export default function Contact() {
                 className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-brand-accent"
                 placeholder="Enter mobile number"
               />
-
             </div>
           </div>
 
@@ -160,7 +179,6 @@ export default function Contact() {
             ></textarea>
           </div>
 
-          {/* BUTTON */}
           <button
             type="submit"
             className="w-full bg-brand-accent text-white py-3 rounded-full font-bold hover:opacity-90 transition"

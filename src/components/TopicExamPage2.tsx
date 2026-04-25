@@ -5,7 +5,9 @@ const coreExamsByTopic: any = {
   ".net mvc vs .net core mvc": [
     {
       title: "Test-1",
-      desc: "21 Diff MVC vs MVC Core",
+
+      desc: "Diff MVC vs MVC Core",
+
       link: "https://online-test.classplusapp.com/?testId=69e7118dacf3fedfb6ac7b6c&defaultLanguage=en",
       image: "https://img.icons8.com/color/96/compare.png",
     },
