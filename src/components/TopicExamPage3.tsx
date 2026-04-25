@@ -47,27 +47,42 @@ const examsData: any = {
     {
       title: "Test-1",
       desc: "Microservices Architecture,Monolithic vs Microservices",
-      link: "https://online-test.classplusapp.com/?testId=69e9dd31a505890736e6b5eb&defaultLanguage=en",
+      link: "https://online-test.classplusapp.com/?testId=69ec6c4341c98e70813182ee&defaultLanguage=en-US",
       image: "https://cdn-icons-png.flaticon.com/512/4149/4149648.png",
     },
-    {
-      title: "Test-2",
-      desc: "Communication B/W Services",
-      link: "https://online-test.classplusapp.com/?testId=69e9dd58cebac1dbbe52e734&defaultLanguage=en",
-      image: "https://img.icons8.com/color/96/compare.png",
-    },
-    {
-      title: "Test-3",
-      desc: "API Gateway",
-      link: "https://online-test.classplusapp.com/?testId=69e9dd83c34736b0ec13ddf3&defaultLanguage=en",
-      image: "https://img.icons8.com/color/96/flow-chart.png",
-    },
-     {
-      title: "Test-4",
-      desc: "API Gateway (Ocelot) ",
-      link: "https://online-test.classplusapp.com/?testId=69e9ddae7b0cd54f0abac205&defaultLanguage=en",
-      image: "https://img.icons8.com/color/96/flow-chart.png",
-    },
+
+
+{
+  title: "Test-2",
+  desc: "Service Design Principles, Database per Service, Bounded Context",
+  link: "https://online-test.classplusapp.com/?testId=69ec6f568b959025ee81e2ae&defaultLanguage=en-US",
+  image: "https://img.icons8.com/color/96/design.png",
+},
+{
+  title: "Test-3",
+  desc: "API Controllers, MVC vs API, DI, Folder Structure, API Testing",
+  link: "https://online-test.classplusapp.com/?testId=69ec707e07e100582cb97674&defaultLanguage=en-US",
+  image: "https://img.icons8.com/color/96/api.png",
+},
+{
+  title: "Test-4",
+  desc: "API Gateway, Routing, Aggregation, Ocelot, Service Discovery",
+  link: "https://online-test.classplusapp.com/?testId=69ec70dec2b1c8f19fe1d313&defaultLanguage=en-US",
+  image: "https://img.icons8.com/color/96/network.png",
+},
+{
+  title: "Test-5",
+  desc: "Saga Pattern, Data Consistency, JWT, OAuth, CORS, API Security",
+  link: "https://online-test.classplusapp.com/?testId=69ec714a3f151dae26aab3e3&defaultLanguage=en-US",
+  image: "https://img.icons8.com/color/96/security-checked.png",
+},
+{
+  title: "Test-6",
+  desc: "Configuration, Resilience (Polly), Logging, Docker, Kubernetes, CI/CD",
+  link: "https://online-test.classplusapp.com/?testId=69ec718d861b20f5d7e8e138&defaultLanguage=en-US",
+  image: "https://img.icons8.com/color/96/cloud.png",
+},
+
   ],
 };
 

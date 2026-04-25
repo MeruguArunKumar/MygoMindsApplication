@@ -89,68 +89,50 @@ export default function DotNetRoadmap() {
   route="/dotnet-topic2"
   navigate={navigate}
 />
-        {/* WEB API */}
-{/* MICROSERVICES + WEB API (CUSTOM UI) */}
-<div className="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 hover:shadow-2xl transition">
+<Section
+  icon={<Globe size={28} />}
+  title="Microservices"
+  items={[
+    "Web API (Foundation) – API fundamentals, routing, controllers, DI, authentication",
 
-  {/* HEADER */}
-  <div className="flex items-center gap-3 mb-4">
-    <div className="p-3 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-xl">
-      <Globe size={28} />
-    </div>
-    <h2 className="text-2xl font-bold">Microservices</h2>
-  </div>
+    "Microservices Fundamentals",
+    "Microservices Basics",
+    "Monolithic vs Microservices",
+    "Characteristics & Benefits",
 
-  {/* WEB API */}
-  <div className="mb-6">
-    <h3 className="text-purple-600 font-semibold mb-2">
-      1. Web API (Foundation)
-    </h3>
+    "Service Design + Communication",
+    "Service Design Principles",
+    "Database per Service",
+    "Bounded Context",
+    "REST, Messaging, Events",
 
-    <ul className="grid md:grid-cols-2 gap-2 text-gray-600 text-sm ml-4">
-      <li>• Web API Fundamentals</li>
-      <li>• HTTP Basics</li>
-      <li>• ASP.NET Web API Core</li>
-      <li>• Controllers & Endpoints</li>
-      <li>• Routing</li>
-      <li>• Model Binding & Validation</li>
-      <li>• Dependency Injection</li>
-      <li>• Working with Data</li>
-      <li>• LINQ in Web API</li>
-      <li>• API Testing Tools</li>
-      <li>• Swagger Integration</li>
-      <li>• Authentication (JWT)</li>
-      <li>• Authorization</li>
-      <li>• Exception Handling & Logging</li>
-      <li>• Middleware Pipeline</li>
-    </ul>
-  </div>
+    "API Layer",
+    "API Controllers",
+    "MVC vs API",
+    "Dependency Injection",
+    "Folder Structure",
+    "Postman & Swagger",
 
-  {/* MICROSERVICES */}
-  <div>
-    <h3 className="text-purple-600 font-semibold mb-2">
-      2. Microservices Concepts
-    </h3>
+    "API Gateway + Discovery",
+    "API Gateway",
+    "Routing & Aggregation",
+    "Ocelot",
+    "Service Discovery",
 
-    <ul className="grid md:grid-cols-2 gap-2 text-gray-600 text-sm ml-4">
-      <li>• Microservices Architecture</li>
-      <li>• Monolithic vs Microservices</li>
-      <li>• Communication Between Services</li>
-      <li>• API Gateway</li>
-    </ul>
-  </div>
+    "Data + Security",
+    "Saga Pattern",
+    "JWT, OAuth, CORS",
+    "API Security",
 
-  {/* BUTTON */}
-  <button
-    onClick={() => navigate("/dotnet-topic3")}
-    className="mt-6 px-6 py-3 rounded-full text-white font-semibold 
-    bg-gradient-to-r from-purple-500 to-indigo-500 
-    hover:scale-105 hover:shadow-lg transition-all duration-300"
-  >
-    Start Learning →
-  </button>
-
-</div>
+    "Advanced Microservices",
+    "Resilience (Polly)",
+    "Logging & Monitoring",
+    "Docker & Kubernetes",
+    "CI/CD"
+  ]}
+  route="/dotnet-topic3"
+  navigate={navigate}
+/>
           {/*  DATABASE + EF CORE 
           <Section
             icon={<Database size={28} />}
@@ -167,6 +149,7 @@ export default function DotNetRoadmap() {
             navigate={navigate}
           />
 */}
+
           {/*  FRONTEND */}
           <Section
             icon={<Globe size={28} />}
