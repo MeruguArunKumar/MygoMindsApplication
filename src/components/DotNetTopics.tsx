@@ -8,7 +8,7 @@ const topicOrder = [
   "conditionals",
   "loops",
   "arrays",
-   "strings",
+  "strings",
   "methods",
   "oops",
   "collections",
@@ -49,10 +49,10 @@ const topicsData: any = {
     color: "from-cyan-500 to-blue-500",
   },
   strings: {
-  name: "Strings",
-  image: "https://img.icons8.com/color/96/abc.png",
-  color: "from-green-500 to-emerald-500",
-},
+    name: "Strings",
+    image: "https://img.icons8.com/color/96/abc.png",
+    color: "from-green-500 to-emerald-500",
+  },
   methods: {
     name: "Methods",
     image: "https://img.icons8.com/color/96/source-code.png",
@@ -94,11 +94,8 @@ export default function DotNetTopics() {
     if (saved) setCompleted(JSON.parse(saved));
   }, []);
 
-  const isUnlocked = (key: string) => {
-    const index = topicOrder.indexOf(key);
-    if (index === 0) return true;
-    return completed.includes(topicOrder[index - 1]);
-  };
+  // ✅ UPDATED: All topics unlocked (removed sequential lock logic)
+  const isUnlocked = () => true;
 
   const markComplete = (key: string) => {
     if (!completed.includes(key)) {
@@ -119,7 +116,7 @@ export default function DotNetTopics() {
           Learning Dashboard
         </h1>
         <p className="text-gray-500 mt-2">
-          Track your progress & master .NET 
+          Track your progress & master .NET
         </p>
       </div>
 
@@ -143,31 +140,30 @@ export default function DotNetTopics() {
 
         {topicOrder.map((key) => {
           const topic = topicsData[key];
-          const unlocked = isUnlocked(key);
+          const unlocked = isUnlocked(); // ✅ UPDATED
           const done = completed.includes(key);
 
           return (
             <div
               key={key}
               onClick={() => {
-                if (unlocked) {
-                  navigate(`/topic/${key}`);
-                  markComplete(key);
-                }
+                // ✅ UPDATED: Always allow click (no lock check)
+                navigate(`/topic/${key}`);
+                markComplete(key);
               }}
               className={`rounded-2xl p-5 shadow-md transition-all duration-300
-              ${unlocked
-                ? "bg-white hover:shadow-xl hover:-translate-y-1 cursor-pointer"
-                : "bg-gray-100 opacity-60 cursor-not-allowed"}`}
+              
+              // ✅ UPDATED: Removed locked styles completely
+              bg-white hover:shadow-xl hover:-translate-y-1 cursor-pointer`}
             >
 
               {/* STATUS */}
               <div className="flex justify-end">
+                {/* ✅ keep only completed tick */}
                 {done && <span className="text-green-500 text-lg">✔</span>}
-                {!unlocked && <span className="text-red-400 text-lg">🔒</span>}
               </div>
 
-              {/* ICON BADGE */}
+              {/* ICON */}
               <div
                 className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center 
                 bg-gradient-to-r ${topic.color}`}

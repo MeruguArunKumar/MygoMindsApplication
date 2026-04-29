@@ -33,26 +33,36 @@ import PythonExam from './components/pythonexam';
 import AwsExam from './components/AwsExam';
 import PowerBiExam from './components/PowerBiExam';
 import DotNetExam from './components/DotNetExam';
+import AngularExam from './components/AngularExam';
+import HtmlExam from './components/HtmlExam';
+import JsExam from './components/JsExam';
 
-// 🔥 DOTNET TOPIC SYSTEM (from 2nd file)
+//  DOTNET TOPIC SYSTEM (from 2nd file)
 import DotNetTopics from './components/DotNetTopics';
 
 import DotNetTopic1 from './components/DotNetTopic1';
 import DotNetTopic2 from './components/DotNetTopic2';
 import DotNetTopic3 from './components/DotNetTopic3';
+import DotNetTopic4 from './components/DotNetTopic4';
 
 import TopicExamPage from './components/TopicExamPage';
 import TopicExamPage1 from './components/TopicExamPage1';
 import TopicExamPage2 from './components/TopicExamPage2';
-
 import TopicExamPage3 from './components/TopicExamPage3';
-
+import TopicExamPage4 from './components/TopicExamPage4';
+//HTML Exams
+import HtmlExamPage from './components/HtmlExamPage';
+// Js Exams
+import JsExamPage from './components/JsExamPage';
+// Angular Exams
+import AngularExamPage from './components/AngularExamPage';
 // Sub Exams
 import DNExamone from './components/DNExamone';
 import Javaexamone from './components/Javaexamone';
 import Pythonexamone from './components/Pythonexamone';
 import Awsexamone from './components/Awsexamone';
 import PowerBiExamOne from './components/PowerBiExamOne';
+
 
 function HomePage() {
   return (
@@ -72,7 +82,7 @@ export default function App() {
     <Router>
       <div className="min-h-screen flex flex-col relative">
 
-        {/* 🔥 WATERMARK BACKGROUND */}
+        {/*  WATERMARK BACKGROUND */}
         <img
           src="https://res.cloudinary.com/dslbwf2g9/image/upload/v1777113830/mgmfulllogo_u1gqpr.png"
           alt="watermark"
@@ -83,7 +93,7 @@ export default function App() {
         <Navbar />
 
 
-        {/* 🔥 TOP BANNER */}
+        {/*  TOP BANNER */}
         <TopBanner />
 
         {/* MAIN */}
@@ -111,7 +121,13 @@ export default function App() {
 
             <Route path="/dotnet-exam" element={<DotNetExam />} />
 
-            {/* 🔥 DOTNET TOPIC ROUTES */}
+             <Route path="/angular-exam" element={<AngularExam />} />
+              <Route path="/angularexam-page" element={<AngularExamPage />} />
+             <Route path="/html-exam" element={<HtmlExam />} />
+             <Route path="/htmlexam-page" element={<HtmlExamPage />} />
+             <Route path="/js-exam" element={<JsExam />} />
+                <Route path="/jsexam-page" element={<JsExamPage />} />
+            {/*  DOTNET TOPIC ROUTES */}
             <Route path="/dotnet-topics" element={<DotNetTopics />} />
 
             {/* C# */}
@@ -125,7 +141,11 @@ export default function App() {
             <Route path="/dotnet-topic2" element={<DotNetTopic2 />} />
             <Route path="/coremvc-topic/:topic" element={<TopicExamPage2 />} />
 
-            {/* Web API */}
+             {/* EF & EFCore */}
+            <Route path="/dotnet-topic4" element={<DotNetTopic4 />} />
+            <Route path="/ef-topic/:topic" element={<TopicExamPage4 />} />
+
+            {/* Web API & Microservice */}
             <Route path="/dotnet-topic3" element={<DotNetTopic3 />} />
             <Route path="/webapi-topic/:topic" element={<TopicExamPage3 />} />
 

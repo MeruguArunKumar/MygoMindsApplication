@@ -47,7 +47,7 @@ export default function DotNetRoadmap() {
 {/*  ASP.NET MVC (Full Syllabus - Classic) */}
 <Section
   icon={<Server size={28} />}
-   title=" ASP.NET MVC (Main Concepts)"
+   title=" ASP.NET MVC"
   items={[
     "Web Fundamentals",
     "MVC Architecture",
@@ -89,6 +89,26 @@ export default function DotNetRoadmap() {
   route="/dotnet-topic2"
   navigate={navigate}
 />
+
+
+ {/*  DATABASE + EF CORE */}
+          <Section
+            icon={<Database size={28} />}
+            title=" EF,Entity Framework Core"
+            items={[
+              "ORM Concepts",
+              "DbContext & DbSet",
+              "Migrations",
+              "CRUD Operations",
+              "LINQ Queries",
+              "Difference b/w EF,EFCore"
+            ]}
+            route="/dotnet-topic4"
+            navigate={navigate}
+          />
+
+
+
 <Section
   icon={<Globe size={28} />}
   title="Microservices"
@@ -133,23 +153,7 @@ export default function DotNetRoadmap() {
   route="/dotnet-topic3"
   navigate={navigate}
 />
-          {/*  DATABASE + EF CORE 
-          <Section
-            icon={<Database size={28} />}
-            title=" Entity Framework Core"
-            items={[
-              "ORM Concepts",
-              "DbContext & DbSet",
-              "Migrations",
-              "CRUD Operations",
-              "LINQ Queries",
-              "Stored Procedures"
-            ]}
-            route="/dotnet-exam-5"
-            navigate={navigate}
-          />
-*/}
-
+         
           {/*  FRONTEND */}
           <Section
             icon={<Globe size={28} />}

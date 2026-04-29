@@ -7,7 +7,7 @@ const examsByTopic: any = {
     {
       title: "Variables Test 1",
       desc: "Basics of variables & data types",
-      link: "https://online-test.classplusapp.com/?testId=69dcd5368ce6aa42058d3bab&defaultLanguage=en",
+      link: "https://online-test.classplusapp.com/?testId=69f04071fcc661f21f5b3e11&defaultLanguage=en",
       image: "https://img.icons8.com/color/96/variable.png",
     },
     {

@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 
 const examsByTopic: any = {
-
   "web fundamentals": [
     {
       title: "Web Fundamentals Test 1",
@@ -24,7 +23,9 @@ const examsByTopic: any = {
       link: "https://online-test.classplusapp.com/?testId=69e7609c700c4108cc48f192&defaultLanguage=en",
       image: "https://img.icons8.com/color/96/flow-chart.png",
     },
-    {
+
+
+     {
       title: "MVC Architecture Test 2",
       desc: "Roles of Model, View, Controller, Advantages",
       link: "https://online-test.classplusapp.com/?testId=69e7610c7b7e6a58153cc30d&defaultLanguage=en",
@@ -249,9 +250,11 @@ const examsByTopic: any = {
       link: "https://online-test.classplusapp.com/?testId=69e7663cae3cea9fbc990fdf&defaultLanguage=en",
       image: "https://img.icons8.com/color/96/connection-status-on.png",
     },
-  ],
-};
 
+  ],
+
+  // 👉 Add all your remaining topics same way
+};
 
 export default function TopicExamPage() {
   const { topic } = useParams();
@@ -260,11 +263,11 @@ export default function TopicExamPage() {
     return <p className="text-center mt-10">Loading...</p>;
   }
 
-  //  Normalize topic
-  const cleanTopic = topic.toLowerCase().trim();
+  // ✅ FIXED NORMALIZATION
+  const cleanTopic = topic.toLowerCase().replaceAll("-", " ").trim();
 
   const exams = examsByTopic[cleanTopic] || [];
-  const formattedTitle = cleanTopic.replaceAll("-", " ");
+  const formattedTitle = cleanTopic;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 via-gray-50 to-purple-50 px-6 py-12">
@@ -327,7 +330,7 @@ export default function TopicExamPage() {
           ))
         ) : (
           <p className="text-center col-span-full text-gray-500">
-            No tests available for <b>{cleanTopic}</b>
+            No tests available for <b>{formattedTitle}</b>
           </p>
         )}
 

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"; // ✅ ADDED
 
 const topicOrder = [
   "Web Fundamentals",
@@ -99,27 +99,26 @@ const topicsData: any = {
 
 export default function DotNetTopics() {
   const navigate = useNavigate();
+
+  // ✅ ADDED: state for completed topics
   const [completed, setCompleted] = useState<string[]>([]);
 
+  // ✅ ADDED: load from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem("completedDotNetTopics");
+    const saved = localStorage.getItem("mvcCompletedTopics");
     if (saved) setCompleted(JSON.parse(saved));
   }, []);
 
-  const isUnlocked = (key: string) => {
-    const index = topicOrder.indexOf(key);
-    if (index === 0) return true;
-    return completed.includes(topicOrder[index - 1]);
-  };
-
+  // ✅ ADDED: mark topic complete
   const markComplete = (key: string) => {
     if (!completed.includes(key)) {
       const updated = [...completed, key];
       setCompleted(updated);
-      localStorage.setItem("completedDotNetTopics", JSON.stringify(updated));
+      localStorage.setItem("mvcCompletedTopics", JSON.stringify(updated));
     }
   };
 
+  // ✅ ADDED: progress calculation
   const progress = Math.round((completed.length / topicOrder.length) * 100);
 
   return (
@@ -135,7 +134,7 @@ export default function DotNetTopics() {
         </p>
       </div>
 
-      {/* PROGRESS BAR */}
+      {/* ✅ ADDED: PROGRESS BAR */}
       <div className="max-w-4xl mx-auto mb-10">
         <div className="flex justify-between mb-2 text-sm text-gray-600">
           <span>Progress</span>
@@ -155,34 +154,26 @@ export default function DotNetTopics() {
 
         {topicOrder.map((key) => {
           const topic = topicsData[key];
-          const unlocked = isUnlocked(key);
-          const done = completed.includes(key);
+          const done = completed.includes(key); // ✅ ADDED
 
           return (
             <div
               key={key}
               onClick={() => {
-                if (unlocked) {
-                  navigate(`/mvc-topic/${key}`);
-                  markComplete(key);
-                }
+                navigate(`/mvc-topic/${key.toLowerCase().replaceAll(" ", "-")}`);
+                markComplete(key); // ✅ ADDED
               }}
-              className={`rounded-2xl p-5 shadow-md transition-all duration-300
-              ${unlocked
-                ? "bg-white hover:shadow-xl hover:-translate-y-1 cursor-pointer"
-                : "bg-gray-100 opacity-60 cursor-not-allowed"}`}
+              className="bg-white rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 cursor-pointer transition-all duration-300"
             >
 
-              {/* STATUS */}
+              {/* ✅ ADDED: STATUS (tick mark) */}
               <div className="flex justify-end">
                 {done && <span className="text-green-500 text-lg">✔</span>}
-                {!unlocked && <span className="text-red-400 text-lg">🔒</span>}
               </div>
 
               {/* ICON */}
               <div
-                className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center 
-                bg-gradient-to-r ${topic.color}`}
+                className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center bg-gradient-to-r ${topic.color}`}
               >
                 <img src={topic.image} className="w-8 h-8" />
               </div>
@@ -191,7 +182,6 @@ export default function DotNetTopics() {
               <h3 className="text-center font-semibold text-gray-700">
                 {topic.name}
               </h3>
-
             </div>
           );
         })}
