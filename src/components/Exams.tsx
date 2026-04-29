@@ -57,7 +57,7 @@ export default function ExamsPage() {
   {
     title: "JavaScript",
     desc: "Master core JavaScript, DOM manipulation, and ES6 concepts.",
-    route: "/javascript-exam",
+    route: "/js-exam",
     image: "https://res.cloudinary.com/dslbwf2g9/image/upload/v1776250961/Js_tqd3vx.png"
   },
   {

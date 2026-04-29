@@ -76,11 +76,8 @@ export default function DotNetCoreTopics() {
     if (saved) setCompleted(JSON.parse(saved));
   }, []);
 
-  const isUnlocked = (key: string) => {
-    const index = coreTopicOrder.indexOf(key);
-    if (index === 0) return true;
-    return completed.includes(coreTopicOrder[index - 1]);
-  };
+  // ❌ REMOVED locking logic completely
+  // const isUnlocked = ...
 
   const markComplete = (key: string) => {
     if (!completed.includes(key)) {
@@ -125,28 +122,22 @@ export default function DotNetCoreTopics() {
 
         {coreTopicOrder.map((key) => {
           const topic = coreTopicsData[key];
-          const unlocked = isUnlocked(key);
-          const done = completed.includes(key);
+          const done = completed.includes(key); // ✅ keep
 
           return (
             <div
               key={key}
               onClick={() => {
-                if (unlocked) {
-                  navigate(`/coremvc-topic/${key}`);
-                  markComplete(key);
-                }
+                // ✅ UPDATED: always clickable
+                navigate(`/coremvc-topic/${key.toLowerCase().replaceAll(" ", "-")}`); // ✅ FIXED URL
+                markComplete(key);
               }}
-              className={`rounded-2xl p-5 shadow-md transition-all duration-300
-              ${unlocked
-                ? "bg-white hover:shadow-xl hover:-translate-y-1 cursor-pointer"
-                : "bg-gray-100 opacity-60 cursor-not-allowed"}`}
+              className="bg-white rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 cursor-pointer transition-all duration-300" // ✅ UPDATED: removed disabled styles
             >
 
               {/* STATUS */}
               <div className="flex justify-end">
-                {done && <span className="text-green-500 text-lg">✔</span>}
-                {!unlocked && <span className="text-red-400 text-lg">🔒</span>}
+                {done && <span className="text-green-500 text-lg">✔</span>} {/* ✅ only tick */}
               </div>
 
               {/* ICON */}

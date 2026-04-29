@@ -162,7 +162,13 @@ export default function TopicExamPage2() {
     return <p className="text-center mt-10">Loading...</p>;
   }
 
-  const cleanTopic = topic.toLowerCase().trim();
+ // const cleanTopic = topic.toLowerCase().trim();
+ // ✅ FIXED: convert URL slug → original key format
+const cleanTopic = topic
+  .toLowerCase()
+  .replaceAll("-", " ")
+   .replace("built in", "built-in") // ✅ IMPORTANT FIX
+  .trim();
   const exams = coreExamsByTopic[cleanTopic] || [];
   const formattedTitle = cleanTopic.replaceAll("-", " ");
 
