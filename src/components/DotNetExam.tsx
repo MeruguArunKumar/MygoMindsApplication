@@ -154,7 +154,7 @@ export default function DotNetRoadmap() {
   navigate={navigate}
 />
          
-          {/*  FRONTEND */}
+          {/*  FRONTEND 
           <Section
             icon={<Globe size={28} />}
             title=" Frontend (React / Angular)"
@@ -169,7 +169,7 @@ export default function DotNetRoadmap() {
             navigate={navigate}
           />
 
-          {/*  DEPLOYMENT */}
+          {/*  DEPLOYMENT 
           <Section
             icon={<Cloud size={28} />}
             title=" Deployment & Tools"
@@ -183,7 +183,7 @@ export default function DotNetRoadmap() {
             route="/dotnet-exam-7"
             navigate={navigate}
           />
-
+             */}
         </div>
       </div>
     </div>
